@@ -24,7 +24,7 @@ def pdb_parser(pdb_file) :
         pdb_file : file with pdb extension
 
     Returns:
-        Dictionnary: {atom_number, atom_name, coord_x, coord_y, coord_z}
+        Dictionnary: {atom_number : array[coord_x, coord_y, coord_z]}
     """
     #print("je suis dans la fonction")
 
