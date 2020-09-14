@@ -1,6 +1,20 @@
-# Threading-Double-Prog-Dyn
-Conception d'un programme de threading par double programmation dynamique
+# Conception d’un programme de threading par double programmation dynamique
 
-Réaliser un programme reprenant la méthode décrite dans l'article 3 basé sur la double programme dynamique. Le threading (enfilage) est une stratégie pour rechercher des séquences compatibles avec une structure. Seul les carbones α de la protéine seront considérés. Vous utiliserez les potentiels statistiques DOPE.
+## Authors
+Estelle Mariaux : estelle.mariaux@hotmail.fr
+Théo Ferreira : theo.ferreira.med@gmail.com
 
-Livre *Protein Structure Comparison Using SAP - Springer* chapitre 13
+[lien Git]
+
+University of Paris M2BI 2020 - 2021
+
+## Short description
+
+## Needed files
+
+## How to use it
+
+## Example
+
+## Documentation
+
