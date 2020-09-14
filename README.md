@@ -2,6 +2,7 @@
 
 ## Authors
 Estelle Mariaux : estelle.mariaux@hotmail.fr
+
 Théo Ferreira : theo.ferreira.med@gmail.com
 
 [lien Git]
