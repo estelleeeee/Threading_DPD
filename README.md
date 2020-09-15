@@ -11,11 +11,17 @@ University of Paris M2BI 2020 - 2021
 
 ## Short description
 
-## Needed files
+## Installation
 
-## How to use it
+# Clone the repository
 
-## Example
+# Requirements
+
+## Run the program
+
+# Toy example
+
+# Get help
 
 ## Documentation
 
