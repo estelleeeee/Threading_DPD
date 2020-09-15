@@ -44,7 +44,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser("Manage the dope.par.txt file to isolate CA-CA pair energies")
     parser.add_argument("-d", "--dope-file", help = "dope.par.txt ", type=str)
     args = parser.parse_args()
-    DOPE_FILE_NAME = args.pdb_file
+    DOPE_FILE_NAME = args.dope_file
     if DOPE_FILE_NAME[:] != 'dope.par.txt' :         
         print("Please select only the file 'dope.par.txt' provided by Jean-Christophe Gelly")
     else: 

@@ -1,8 +1,11 @@
-name :
+name : threading_DPD
 
-python 3.8
-conda 4.8.4
-numpy
+channels:
+  - defaults
+  - conda-forge
 
-conda-forge
-  - argparse
+dependencies:
+  - python = 3.8
+  - numpy = 1.19.1
+  - argparse ??
+
