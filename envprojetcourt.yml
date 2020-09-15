@@ -1,1 +1,8 @@
 name :
+
+python 3.8
+conda 4.8.4
+numpy
+
+conda-forge
+  - argparse
