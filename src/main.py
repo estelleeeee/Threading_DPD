@@ -46,8 +46,9 @@ if __name__ == "__main__":
         mat_dist = distance_matrix(pdb_coordinates)
 
         print(matrix_low_level(mat_dist, seq_3_list, seq_3_list[0], 1, dope_energy_value))
-        # dope_mat_matrix = []
+        
 
+        #dope_mat_matrix = []
 
         # for res in pdb_coordinates.keys():
         #     for j in enumerate(seq_3_list):
