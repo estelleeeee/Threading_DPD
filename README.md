@@ -25,7 +25,7 @@ git clone https://github.com/estelleeeee/Threading_DPD.git
 2. Install the few required **python packages**:
 
 ```
-pip3 install -r requirements.txt
+pip install -r RequireEnv.yml
 
 # This command will install the following modules:
 # python == 3.8
