@@ -28,8 +28,10 @@ git clone https://github.com/estelleeeee/Threading_DPD.git
 pip3 install -r requirements.txt
 
 # This command will install the following modules:
-# 
-#
+# python == 3.8
+# numpy == 1.19.1
+# argparse == 1.4.0
+
 ```
 
 ## Run the program
