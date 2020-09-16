@@ -56,7 +56,7 @@ For the fixed residue is CYS in position 1, the optimized score is -3.01
  [ 0.     nan  0.08 -0.08 -0.38 -0.38 -0.39 -0.39 -0.64 -0.73 -1.3  -2.56]
  [ 0.     nan  0.08 -0.92 -0.92 -0.92 -0.92 -0.92 -0.92 -1.64 -3.01 -3.01]]
  ```
- And then give you the optimized score for every AA, for position 1, 4 and 7 (here are the first 3 AA of the sequence)
+ And then give you the optimized score for every AA, for position 1, 4 and 7 (here are only the first 3 AA of the sequence for space management)
  ```
  For each amino acids, for the position 1, 4 or 7, we calculate the minimized score
 -----
