@@ -10,7 +10,7 @@ import numpy as np
 
 import parsing
 
-def matrix_low_level(dist_matrix, query, res_i, pos):
+def matrix_low_level(dist_matrix, query, res_i, pos, energy_value_dict):
     '''
     This function does low level matrix for each residue in each position
 
@@ -41,7 +41,7 @@ def matrix_low_level(dist_matrix, query, res_i, pos):
                 dope_mat[row_prev-1][col_prev],
                 dope_mat[row_prev][col_prev-1],
                 dope_mat[row_prev-1][col_prev-1]
-                    + parsing.dope_score(res_i, query[row_prev-1], dist_pos[col_prev-1]))
+                    + parsing.dope_score(res_i, query[row_prev-1], dist_pos[col_prev-1], energy_value_dict))
     # residue fixed, match score = 0
     dope_mat[pos][pos] = dope_mat[pos-1][pos-1]
     for row_after in range(pos+1, len(query)+1):
@@ -50,7 +50,7 @@ def matrix_low_level(dist_matrix, query, res_i, pos):
                     and math.isnan(dope_mat[row_after][col_after-1]):
                 dope_mat[row_after][col_after] =\
                     dope_mat[row_after-1][col_after-1] +\
-                    parsing.dope_score(res_i, query[row_after], dist_pos[col_after])
+                    parsing.dope_score(res_i, query[row_after], dist_pos[col_after], energy_value_dict)
             elif math.isnan(dope_mat[row_after-1][col_after-1])\
                     and math.isnan(dope_mat[row_after-1][col_after]):
                 dope_mat[row_after][col_after] =\
@@ -64,7 +64,7 @@ def matrix_low_level(dist_matrix, query, res_i, pos):
                     dope_mat[row_after-1][col_after],
                     dope_mat[row_after][col_after-1],
                     dope_mat[row_after-1][col_after-1]
-                        + parsing.dope_score(res_i, query[row_after-1], dist_pos[col_after-1]))
+                        + parsing.dope_score(res_i, query[row_after-1], dist_pos[col_after-1], energy_value_dict))
     print(
         "For the fixed residue is {:s} in position {:d}, the optimized score is {:.2f}"
         .format(res_i, pos, dope_mat[-1][-1]))

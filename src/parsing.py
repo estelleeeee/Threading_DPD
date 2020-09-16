@@ -42,7 +42,7 @@ def pdb_parser(pdb_file):
                               float(line[46:54].strip())])
     return coordinates_dict
 
-def dope_parser():
+def dope_parser(dope_file):
     '''
     This function manage dope file isolating alpha carbon - alpha carbon pair energies
 
@@ -57,7 +57,7 @@ def dope_parser():
     Returns :
         Dictionnary: {residue 1 - residue 2 : array[energy_value from 1 to end]}
     '''
-    with open(DOPE_FILE, "r") as fillin:
+    with open(dope_file, "r") as fillin:
         energy_value_dict = {}
         for line in fillin:
             words_list = line.strip().split(" ")
@@ -72,7 +72,7 @@ def dope_parser():
                 energy_value_dict[res_res] = bin_list
         return energy_value_dict
 
-def dope_score(res1, res2, dist_res1_res2):
+def dope_score(res1, res2, dist_res1_res2, energy_value_dict):
     '''
     This function calculates the energy value (dope.par) for a distance between two amino acids.
 
@@ -89,9 +89,9 @@ def dope_score(res1, res2, dist_res1_res2):
         Dictionnary: {residue 1 - residue 2 : interval_index}
         interval_index is the bin correponding to the distance
     '''
-    dope_dict = dope_parser()
+    
     interval_index = round(int(dist_res1_res2 * 2 - 0.5))
-    return dope_dict[(res1, res2)][interval_index]
+    return energy_value_dict[(res1, res2)][interval_index]
 
 
 def fasta_code(fasta_file):
