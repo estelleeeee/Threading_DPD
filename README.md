@@ -40,7 +40,9 @@ conda env update --file Threading_DPD.yml
 
 ```
 python src/main.py -p ../data/1n0a.pdb -d ../data/dope.par.txt -f ../data/1n09.fasta 
-
+```
+This line should result in a low level matrix for the first AA of your sequence, at the position 1.
+```
 For the fixed residue is CYS in position 1, the optimized score is -3.01
 [[ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]
  [ 0.    0.     nan   nan   nan   nan   nan   nan   nan   nan   nan   nan]
@@ -53,7 +55,20 @@ For the fixed residue is CYS in position 1, the optimized score is -3.01
  [ 0.     nan  0.08 -0.08 -0.37 -0.37 -0.37 -0.37 -0.62 -0.62 -0.98 -2.44]
  [ 0.     nan  0.08 -0.08 -0.38 -0.38 -0.39 -0.39 -0.64 -0.73 -1.3  -2.56]
  [ 0.     nan  0.08 -0.92 -0.92 -0.92 -0.92 -0.92 -0.92 -1.64 -3.01 -3.01]]
- 
+ ```
+ And then give you the optimized score for every AA, for position 1, 4 and 7 (here are the first 3 AA of the sequence)
+ ```
+ For each amino acids, for the position 1, 4 or 7, we calculate the minimized score
+-----
+For the fixed residue is CYS in position 1, the optimized score is -3.01
+For the fixed residue is CYS in position 4, the optimized score is -7.35
+For the fixed residue is CYS in position 7, the optimized score is -6.56
+-----
+For the fixed residue is THR in position 1, the optimized score is -2.41
+For the fixed residue is THR in position 4, the optimized score is -5.02
+For the fixed residue is THR in position 7, the optimized score is -4.53
+-----
+For the fixed residue is TRP in position 1, the optimized score is -2.65
+For the fixed residue is TRP in position 4, the optimized score is -4.64
+For the fixed residue is TRP in position 7, the optimized score is -4.03
 ```
-
-
