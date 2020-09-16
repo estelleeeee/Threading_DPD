@@ -39,7 +39,7 @@ conda env update --file Threading_DPD.yml
 ## Run the program
 
 ```
-python src/main.py -p ../data/1n0a.pdb -d ../data/dope.par.txt -f ../data/1n09.fasta 
+python src/main.py -p data/1n0a.pdb -d data/dope.par.txt -f data/1n09.fasta 
 ```
 This line should result in a low level matrix for the first AA of your sequence, at the position 1.
 ```
