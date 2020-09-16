@@ -107,16 +107,12 @@ def fasta_code(fasta_file):
     -------
     dict[str]=[str,str,...]
     '''
-    amino_3_dict = {}
     with open(fasta_file, "r") as file:
         seq_3_list = []
         for line in file:
-            if line[0] == ">":
-                # dictionnary key is the name of the sequence
-                seq_name = line[1:5]
-            else:
+            if line[0] != ">":
                 for amino in line[:-1]:
-                    if amino != 'X':  # HETATOM were not selected
+                    # avoid unknown residues
+                    if amino != 'X':
                         seq_3_list.append(AA_DICT[amino])
-    amino_3_dict[seq_name] = seq_3_list
-    return amino_3_dict
+    return seq_3_list
