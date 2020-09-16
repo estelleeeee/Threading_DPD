@@ -37,7 +37,7 @@ pip install -r RequireEnv.yml
 ## Run the program
 
 ```
-python main.py -p '1n0a.pdb' -f '1n09.fasta'
+python src/main.py -p '1n0a.pdb' -f '1n09.fasta'
 
 ```
 
