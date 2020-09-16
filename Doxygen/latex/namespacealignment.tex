@@ -1,0 +1,39 @@
+\hypertarget{namespacealignment}{}\doxysection{alignment Namespace Reference}
+\label{namespacealignment}\index{alignment@{alignment}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacealignment_a188e180724f4d3eac469745abf597a9a}{matrix\+\_\+low\+\_\+level}} (dist\+\_\+matrix, query, res\+\_\+i, pos, energy\+\_\+value\+\_\+dict)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This module creates the low level matrix for a sequence and a template.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacealignment_a188e180724f4d3eac469745abf597a9a}\label{namespacealignment_a188e180724f4d3eac469745abf597a9a}} 
+\index{alignment@{alignment}!matrix\_low\_level@{matrix\_low\_level}}
+\index{matrix\_low\_level@{matrix\_low\_level}!alignment@{alignment}}
+\doxysubsubsection{\texorpdfstring{matrix\_low\_level()}{matrix\_low\_level()}}
+{\footnotesize\ttfamily def alignment.\+matrix\+\_\+low\+\_\+level (\begin{DoxyParamCaption}\item[{}]{dist\+\_\+matrix,  }\item[{}]{query,  }\item[{}]{res\+\_\+i,  }\item[{}]{pos,  }\item[{}]{energy\+\_\+value\+\_\+dict }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function does low level matrix for each residue in each position
+
+Parameters
+----------
+dist_matrix: numpy.ndarray
+    Matrix which contains distance between template coordinates
+query: dictionary
+    contains query sequence
+res_i: str
+    residue which was fixed
+pos: int
+    position of the fixed residue
+
+Returns
+-------
+Low-level matrix and the optimized score for each residue in each position
+\end{DoxyVerb}
+ 

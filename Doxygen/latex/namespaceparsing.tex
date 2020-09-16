@@ -1,0 +1,118 @@
+\hypertarget{namespaceparsing}{}\doxysection{parsing Namespace Reference}
+\label{namespaceparsing}\index{parsing@{parsing}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceparsing_a0d6d8bfa9a09c67523a55139c81ca880}{pdb\+\_\+parser}} (pdb\+\_\+file)
+\item 
+def \mbox{\hyperlink{namespaceparsing_aaaafe5dbf13a8a3134c82b53cdd06ec6}{dope\+\_\+parser}} (dope\+\_\+file)
+\item 
+def \mbox{\hyperlink{namespaceparsing_ad9b06f7f6af897e27b4d78db223890fa}{dope\+\_\+score}} (res1, res2, dist\+\_\+res1\+\_\+res2, energy\+\_\+value\+\_\+dict)
+\item 
+def \mbox{\hyperlink{namespaceparsing_aab746fa573fa42ded11a639fc7f6110c}{fasta\+\_\+code}} (fasta\+\_\+file)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary {\bfseries A\+A\+\_\+\+D\+I\+CT}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This module parse pdb, dope and fasta files.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceparsing_aaaafe5dbf13a8a3134c82b53cdd06ec6}\label{namespaceparsing_aaaafe5dbf13a8a3134c82b53cdd06ec6}} 
+\index{parsing@{parsing}!dope\_parser@{dope\_parser}}
+\index{dope\_parser@{dope\_parser}!parsing@{parsing}}
+\doxysubsubsection{\texorpdfstring{dope\_parser()}{dope\_parser()}}
+{\footnotesize\ttfamily def parsing.\+dope\+\_\+parser (\begin{DoxyParamCaption}\item[{}]{dope\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function manage dope file isolating alpha carbon - alpha carbon pair energies
+
+Statistical potential values :
+Contains energy value for a pair of specific atoms at a given bin distance of 0.5 Angstroms.
+First value is for a pair of atoms at a distance between 0.25 and 0.75 A.
+Bin distance reaches 15.0 A.
+
+It retrieves :
+1 - energy value for each residue - residue
+
+Returns :
+    Dictionnary: {residue 1 - residue 2 : array[energy_value from 1 to end]}
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceparsing_ad9b06f7f6af897e27b4d78db223890fa}\label{namespaceparsing_ad9b06f7f6af897e27b4d78db223890fa}} 
+\index{parsing@{parsing}!dope\_score@{dope\_score}}
+\index{dope\_score@{dope\_score}!parsing@{parsing}}
+\doxysubsubsection{\texorpdfstring{dope\_score()}{dope\_score()}}
+{\footnotesize\ttfamily def parsing.\+dope\+\_\+score (\begin{DoxyParamCaption}\item[{}]{res1,  }\item[{}]{res2,  }\item[{}]{dist\+\_\+res1\+\_\+res2,  }\item[{}]{energy\+\_\+value\+\_\+dict }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function calculates the energy value (dope.par) for a distance between two amino acids.
+
+It retrieves :
+1 - energy value for a distance between two amino acids
+
+Args :
+    res1 : residue 1
+    res2 : residue 2
+    dist_res1_res2 : distance between residue 1 and residue 2
+    dope_file : dope score for AA
+
+Returns :
+    Dictionnary: {residue 1 - residue 2 : interval_index}
+    interval_index is the bin correponding to the distance
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceparsing_aab746fa573fa42ded11a639fc7f6110c}\label{namespaceparsing_aab746fa573fa42ded11a639fc7f6110c}} 
+\index{parsing@{parsing}!fasta\_code@{fasta\_code}}
+\index{fasta\_code@{fasta\_code}!parsing@{parsing}}
+\doxysubsubsection{\texorpdfstring{fasta\_code()}{fasta\_code()}}
+{\footnotesize\ttfamily def parsing.\+fasta\+\_\+code (\begin{DoxyParamCaption}\item[{}]{fasta\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This Function transforms a fasta file with AA in 1 letter code
+into a dictionary with AA, code 3 letters, in a list.
+
+Parameters
+----------
+fasta_file : file.fasta
+
+Returns
+-------
+dict[str]=[str,str,...]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceparsing_a0d6d8bfa9a09c67523a55139c81ca880}\label{namespaceparsing_a0d6d8bfa9a09c67523a55139c81ca880}} 
+\index{parsing@{parsing}!pdb\_parser@{pdb\_parser}}
+\index{pdb\_parser@{pdb\_parser}!parsing@{parsing}}
+\doxysubsubsection{\texorpdfstring{pdb\_parser()}{pdb\_parser()}}
+{\footnotesize\ttfamily def parsing.\+pdb\+\_\+parser (\begin{DoxyParamCaption}\item[{}]{pdb\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function manage pdb file isolating alpha carbons only (atome type).
+
+It retrieves:
+1. residu number
+2. x, y, z coordinates
+
+Args:
+    pdb_file : file with pdb extension
+
+Returns:
+    Dictionnary: {atom_number : array[coord_x, coord_y, coord_z]}
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceparsing_aaf68ad5d67753f026c6d8a1a94548579}\label{namespaceparsing_aaf68ad5d67753f026c6d8a1a94548579}} 
+\index{parsing@{parsing}!AA\_DICT@{AA\_DICT}}
+\index{AA\_DICT@{AA\_DICT}!parsing@{parsing}}
+\doxysubsubsection{\texorpdfstring{AA\_DICT}{AA\_DICT}}
+{\footnotesize\ttfamily dictionary parsing.\+A\+A\+\_\+\+D\+I\+CT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{'A'}: \textcolor{stringliteral}{'ALA'}, \textcolor{stringliteral}{'R'}: \textcolor{stringliteral}{'ARG'}, \textcolor{stringliteral}{'N'}: \textcolor{stringliteral}{'ASN'}, \textcolor{stringliteral}{'D'}: \textcolor{stringliteral}{'ASP'}, \textcolor{stringliteral}{'C'}: \textcolor{stringliteral}{'CYS'},}
+\DoxyCodeLine{2                \textcolor{stringliteral}{'E'}: \textcolor{stringliteral}{'GLU'}, \textcolor{stringliteral}{'Q'}: \textcolor{stringliteral}{'GLN'}, \textcolor{stringliteral}{'G'}: \textcolor{stringliteral}{'GLY'}, \textcolor{stringliteral}{'H'}: \textcolor{stringliteral}{'HIS'}, \textcolor{stringliteral}{'I'}: \textcolor{stringliteral}{'ILE'},}
+\DoxyCodeLine{3                \textcolor{stringliteral}{'L'}: \textcolor{stringliteral}{'LEU'}, \textcolor{stringliteral}{'K'}: \textcolor{stringliteral}{'LYS'}, \textcolor{stringliteral}{'M'}: \textcolor{stringliteral}{'MET'}, \textcolor{stringliteral}{'F'}: \textcolor{stringliteral}{'PHE'}, \textcolor{stringliteral}{'P'}: \textcolor{stringliteral}{'PRO'},}
+\DoxyCodeLine{4                \textcolor{stringliteral}{'S'}: \textcolor{stringliteral}{'SER'}, \textcolor{stringliteral}{'T'}: \textcolor{stringliteral}{'THR'}, \textcolor{stringliteral}{'W'}: \textcolor{stringliteral}{'TRP'}, \textcolor{stringliteral}{'Y'}: \textcolor{stringliteral}{'TYR'}, \textcolor{stringliteral}{'V'}: \textcolor{stringliteral}{'VAL'}\}}
+
+\end{DoxyCode}

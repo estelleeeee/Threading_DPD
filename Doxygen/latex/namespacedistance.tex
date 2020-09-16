@@ -1,0 +1,56 @@
+\hypertarget{namespacedistance}{}\doxysection{distance Namespace Reference}
+\label{namespacedistance}\index{distance@{distance}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedistance_ab87ced40de6657e64aaaa6ae9e5bb94e}{distance\+\_\+matrix}} (amino\+\_\+dict)
+\item 
+def \mbox{\hyperlink{namespacedistance_a2de48d7603578d337561ea2f3a72d5e8}{distance\+\_\+array}} (array1, array2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This module creates the distance matrix.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacedistance_a2de48d7603578d337561ea2f3a72d5e8}\label{namespacedistance_a2de48d7603578d337561ea2f3a72d5e8}} 
+\index{distance@{distance}!distance\_array@{distance\_array}}
+\index{distance\_array@{distance\_array}!distance@{distance}}
+\doxysubsubsection{\texorpdfstring{distance\_array()}{distance\_array()}}
+{\footnotesize\ttfamily def distance.\+distance\+\_\+array (\begin{DoxyParamCaption}\item[{}]{array1,  }\item[{}]{array2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function calculates the distance beween two arrays
+
+Parameters
+----------
+array1 : numpy.ndarray
+    coordinates of the first position
+array2 : numpy.ndarray
+    coordinates of the second position
+
+Returns
+-------
+np.array(dist)
+    distance between the two arrays
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacedistance_ab87ced40de6657e64aaaa6ae9e5bb94e}\label{namespacedistance_ab87ced40de6657e64aaaa6ae9e5bb94e}} 
+\index{distance@{distance}!distance\_matrix@{distance\_matrix}}
+\index{distance\_matrix@{distance\_matrix}!distance@{distance}}
+\doxysubsubsection{\texorpdfstring{distance\_matrix()}{distance\_matrix()}}
+{\footnotesize\ttfamily def distance.\+distance\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{amino\+\_\+dict }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function creates a distance matrix between all amino acids in the dictionary
+
+Parameters
+----------
+AA_dict : dictionary
+    contains position and coordinates of amino acids
+
+Returns
+-------
+np.array(dist_matrix)
+    Matrix which contains distance between amino acids
+\end{DoxyVerb}
+ 

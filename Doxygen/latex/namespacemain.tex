@@ -1,0 +1,81 @@
+\hypertarget{namespacemain}{}\doxysection{main Namespace Reference}
+\label{namespacemain}\index{main@{main}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries parser}
+\item 
+\mbox{\Hypertarget{namespacemain_a1fdabe2077f86bd72dbb433530b1f192}\label{namespacemain_a1fdabe2077f86bd72dbb433530b1f192}} 
+{\bfseries help}
+\item 
+\mbox{\Hypertarget{namespacemain_add4e4c9e96030cc8c55af23e1b21a1c1}\label{namespacemain_add4e4c9e96030cc8c55af23e1b21a1c1}} 
+{\bfseries type}
+\item 
+\mbox{\Hypertarget{namespacemain_a26f656d825a0ffd09a95f3e7953445e5}\label{namespacemain_a26f656d825a0ffd09a95f3e7953445e5}} 
+{\bfseries str}
+\item 
+\mbox{\Hypertarget{namespacemain_a1344c1e698a1e688c7ae0828f75d5a48}\label{namespacemain_a1344c1e698a1e688c7ae0828f75d5a48}} 
+{\bfseries required}
+\item 
+\mbox{\Hypertarget{namespacemain_a10926d7b7053badc9647defe0abb8adc}\label{namespacemain_a10926d7b7053badc9647defe0abb8adc}} 
+{\bfseries args} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\Hypertarget{namespacemain_a4bd959911f1567b6fc6fa3b1cb6c41c1}\label{namespacemain_a4bd959911f1567b6fc6fa3b1cb6c41c1}} 
+{\bfseries P\+D\+B\+\_\+\+F\+I\+L\+E\+\_\+\+N\+A\+ME} = args.\+pdb\+\_\+file
+\item 
+\mbox{\Hypertarget{namespacemain_a0f0a94b65c002d5016f19fc38bc8061d}\label{namespacemain_a0f0a94b65c002d5016f19fc38bc8061d}} 
+{\bfseries D\+O\+P\+E\+\_\+\+F\+I\+L\+E\+\_\+\+N\+A\+ME} = args.\+dope\+\_\+file
+\item 
+\mbox{\Hypertarget{namespacemain_a02ad72e8d7a6c6f105a3ba6b4e3aef0b}\label{namespacemain_a02ad72e8d7a6c6f105a3ba6b4e3aef0b}} 
+{\bfseries F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E\+\_\+\+N\+A\+ME} = args.\+fasta\+\_\+file
+\item 
+\mbox{\Hypertarget{namespacemain_ab525e38bd5c63f972707a9669f3d2211}\label{namespacemain_ab525e38bd5c63f972707a9669f3d2211}} 
+{\bfseries pdb\+\_\+coordinates} = \mbox{\hyperlink{namespaceparsing_a0d6d8bfa9a09c67523a55139c81ca880}{parsing.\+pdb\+\_\+parser}}(P\+D\+B\+\_\+\+F\+I\+L\+E\+\_\+\+N\+A\+ME)
+\item 
+\mbox{\Hypertarget{namespacemain_a94d0594355c8b0843862a93469f20b32}\label{namespacemain_a94d0594355c8b0843862a93469f20b32}} 
+{\bfseries dope\+\_\+energy\+\_\+value} = \mbox{\hyperlink{namespaceparsing_aaaafe5dbf13a8a3134c82b53cdd06ec6}{parsing.\+dope\+\_\+parser}}(D\+O\+P\+E\+\_\+\+F\+I\+L\+E\+\_\+\+N\+A\+ME)
+\item 
+\mbox{\Hypertarget{namespacemain_ab19a847344563dde298fca598ea38704}\label{namespacemain_ab19a847344563dde298fca598ea38704}} 
+{\bfseries seq\+\_\+3\+\_\+list} = \mbox{\hyperlink{namespaceparsing_aab746fa573fa42ded11a639fc7f6110c}{parsing.\+fasta\+\_\+code}}(F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E\+\_\+\+N\+A\+ME)
+\item 
+\mbox{\Hypertarget{namespacemain_a360b7f00abab60b3214d15901ad6010b}\label{namespacemain_a360b7f00abab60b3214d15901ad6010b}} 
+{\bfseries mat\+\_\+dist} = \mbox{\hyperlink{namespacedistance_ab87ced40de6657e64aaaa6ae9e5bb94e}{distance.\+distance\+\_\+matrix}}(pdb\+\_\+coordinates)
+\item 
+{\bfseries L\+\_\+matrix}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This file computes the double dynamic programming
+
+USAGE
+=====
+    python main.py -p <pdb_file> -d <dope_score_file> -f <fasta_file>\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemain_aac48f9134d1740f71665ca5f210fd1d8}\label{namespacemain_aac48f9134d1740f71665ca5f210fd1d8}} 
+\index{main@{main}!L\_matrix@{L\_matrix}}
+\index{L\_matrix@{L\_matrix}!main@{main}}
+\doxysubsubsection{\texorpdfstring{L\_matrix}{L\_matrix}}
+{\footnotesize\ttfamily main.\+L\+\_\+matrix}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \mbox{\hyperlink{namespacealignment_a188e180724f4d3eac469745abf597a9a}{alignment.matrix\_low\_level}}(mat\_dist, seq\_3\_list,\(\backslash\)}
+\DoxyCodeLine{2                 seq\_3\_list[0], 1, dope\_energy\_value)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemain_a9f3911118b78333a8f963e063f12c7ed}\label{namespacemain_a9f3911118b78333a8f963e063f12c7ed}} 
+\index{main@{main}!parser@{parser}}
+\index{parser@{parser}!main@{main}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily main.\+parser}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  argparse.ArgumentParser(\textcolor{stringliteral}{"{}This program aligns a sequence to a model"{}}}
+\DoxyCodeLine{2                                 +\textcolor{stringliteral}{"{} structure using threading using double dynamic program."{}}}
+\DoxyCodeLine{3                                 +\textcolor{stringliteral}{"{} It is based on THREADER by Jones DT 1998"{}})}
+
+\end{DoxyCode}
