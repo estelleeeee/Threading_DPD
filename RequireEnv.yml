@@ -1,0 +1,9 @@
+name : threading_DPD
+
+channels:
+  - defaults
+
+dependencies:
+  - python == 3.8
+  - numpy == 1.19.1
+  - argparse == 1.4.0
