@@ -1,6 +1,14 @@
+"""
+This module creates the low level matrix for a sequence and a template.
+"""
+
+__authors__ = ("Theo Ferreira", "Estelle Mariaux")
+__date__ = "2020/09"
 
 import math
+import numpy as np
 
+import parsing
 
 def matrix_low_level(dist_matrix, query, res_i, pos):
     '''
@@ -15,28 +23,25 @@ def matrix_low_level(dist_matrix, query, res_i, pos):
     res_i: str
         residue which was fixed
     pos: int
-        position of the fixed residue 
+        position of the fixed residue
 
     Returns
     -------
     Low-level matrix and the optimized score for each residue in each position
-
     '''
-
     # distance between fixed residue and other positions
     dist_pos = dist_matrix[pos - 1]
     dope_mat = np.empty((len(query)+1, len(dist_pos)+1))
     dope_mat.fill(np.nan)
     dope_mat[0, :] = 0
     dope_mat[:, 0] = 0
-    #gap = 0
     for row_prev in range(1, pos):
         for col_prev in range(1, pos):
             dope_mat[row_prev][col_prev] = min(
                 dope_mat[row_prev-1][col_prev],
                 dope_mat[row_prev][col_prev-1],
                 dope_mat[row_prev-1][col_prev-1]
-                + dope_score(res_i, query[row_prev-1], dist_pos[col_prev-1]))
+                    + parsing.dope_score(res_i, query[row_prev-1], dist_pos[col_prev-1]))
     # residue fixed, match score = 0
     dope_mat[pos][pos] = dope_mat[pos-1][pos-1]
     for row_after in range(pos+1, len(query)+1):
@@ -45,7 +50,7 @@ def matrix_low_level(dist_matrix, query, res_i, pos):
                     and math.isnan(dope_mat[row_after][col_after-1]):
                 dope_mat[row_after][col_after] =\
                     dope_mat[row_after-1][col_after-1] +\
-                    dope_score(res_i, query[row_after], dist_pos[col_after])
+                    parsing.dope_score(res_i, query[row_after], dist_pos[col_after])
             elif math.isnan(dope_mat[row_after-1][col_after-1])\
                     and math.isnan(dope_mat[row_after-1][col_after]):
                 dope_mat[row_after][col_after] =\
@@ -59,8 +64,7 @@ def matrix_low_level(dist_matrix, query, res_i, pos):
                     dope_mat[row_after-1][col_after],
                     dope_mat[row_after][col_after-1],
                     dope_mat[row_after-1][col_after-1]
-                    + dope_score(res_i, query[row_after-1],
-                                 dist_pos[col_after-1]))
+                        + parsing.dope_score(res_i, query[row_after-1], dist_pos[col_after-1]))
     print(
         "For the fixed residue is {:s} in position {:d}, the optimized score is {:.2f}"
         .format(res_i, pos, dope_mat[-1][-1]))
