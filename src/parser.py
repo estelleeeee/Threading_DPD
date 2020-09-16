@@ -24,7 +24,7 @@ def pdb_parser(pdb_file):
         for line in fillin:
             atom_type = line[12:16].strip()
             # HETATOM were excluded and only C-alpha were selected
-            if line[0:6].strip() == "ATOM" and (  
+            if line[0:6].strip() == "ATOM" and (
                     atom_type == "CA" or atom_type == "C1*"):
                 res_number = int(line[22:26].strip())
                 coordinates[res_number] =\
@@ -95,6 +95,28 @@ if __name__ == "__main__":
             + "Please select only the file 'dope.par.txt' provided by JC Gelly")
     else:
         dope_energy_value = dope_parser(DOPE_FILE_NAME)
+
+
+def dope_score(res1, res2, dist_res1_res2):
+    '''
+    This function calculates the energy value (dope.par) for a distance between two amino acids.
+
+    It retrieves : 
+    1 - energy value for a distance between two amino acids
+
+    Args : 
+        res1 : residue 1
+        res2 : residue 2
+        dist_res1_res2 : distance between residue 1 and residue 2 
+
+    Returns : 
+        Dictionnary: {residue 1 - residue 2 : interval_index}
+        interval_index is the bin correponding to the distance
+    '''
+
+    dope_dict = dope_parser(dope_file)
+    interval_index = round(int(dist_res1_res2 * 2 - 0.5))
+    return dope_dict[(res1, res2)][interval_index]
 
 
 def fasta_code(fasta_file):
