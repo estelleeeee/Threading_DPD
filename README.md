@@ -36,8 +36,5 @@ pip install -r RequireEnv.yml
 
 ## Run the program
 
-# Toy example
-
-# Get help
 
 
