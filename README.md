@@ -11,15 +11,15 @@ University of Paris M2BI 2020 - 2021
 
 In order to model the structural representation of a protein (tertiary structure) based on its amino acid sequence (primary structure), the present project aims at reproducing the THREADER (David Jones 1998) software using the threading by double-dynamic programming.
 
-## Installation
+# Installation
 
-# Clone the repository
+## Clone the repository
 
 ```
 git clone https://github.com/estelleeeee/Threading_DPD.git
 
 ```
-# Requirements
+## Requirements
 
 1. A linux distribution
 2. Install the few required **python packages**:
